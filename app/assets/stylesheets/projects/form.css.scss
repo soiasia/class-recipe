@@ -55,6 +55,30 @@ form.project-form {
       }
     }
 
+    .selectable-icons {
+      h1 {
+        margin-bottom: 5px;
+        margin-top: 20px;
+        font-size: 22px;
+      }
+      img {
+        height: 50px;
+        margin-left: 5px;
+        border: 3px solid rgba(0, 0, 0, 0);
+
+      }
+      img.selected {
+        border: 3px solid orange;
+      }
+      .about-license {
+        margin-top: 10px;
+        font-size: 12px;
+        a {
+          color: $common-basic-color;
+        }
+      }
+    }
+
     .license {
       h1 {
         margin-bottom: 5px;

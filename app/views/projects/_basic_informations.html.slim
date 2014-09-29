@@ -7,6 +7,20 @@ section#basic-informations
     h1.title
       == @project.title
     == render "components/like", resources: [@owner, @project]
+    .icons
+      .subject.icon
+        - index = @project.subject.nil? ? 3 : @project.subject
+        - subject = @project.subjects[index]
+        == image_tag subject[0], title: subject[1]
+      .scale.icon
+        - index = @project.scale.nil? ? 3 : @project.scale
+        - scale = @project.scales[index]
+        == image_tag scale[0], title: scale[1]
+      .age.icon
+        - index = @project.age.nil? ? 3 : @project.age
+        - age = @project.ages[index]
+        == image_tag age[0], title: age[1]
+
   section.body
     .margin
     - if @project.figures.present?

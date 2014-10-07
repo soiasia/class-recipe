@@ -9,15 +9,15 @@ section#basic-informations
     == render "components/like", resources: [@owner, @project]
     .icons
       .subject.icon
-        - index = @project.subject.nil? ? 3 : @project.subject
+        - index = @project.subject.nil? ? 0 : @project.subject
         - subject = @project.subjects[index]
         == image_tag subject[0], title: subject[1]
       .scale.icon
-        - index = @project.scale.nil? ? 3 : @project.scale
+        - index = @project.scale.nil? ? 0 : @project.scale
         - scale = @project.scales[index]
         == image_tag scale[0], title: scale[1]
       .age.icon
-        - index = @project.age.nil? ? 3 : @project.age
+        - index = @project.age.nil? ? 0 : @project.age
         - age = @project.ages[index]
         == image_tag age[0], title: age[1]
 

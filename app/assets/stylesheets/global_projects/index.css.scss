@@ -152,6 +152,7 @@
             width: 220px;
             background: $common-light-gray;
             .inner {
+              @include cf;
               $figure_width: 210px;
               margin: 5px 5px 20px;
               figure {
@@ -263,11 +264,18 @@
                 }
               }
               .meta {
+                float: left;
                 line-height: 18px;
                 font-size: 12px;
                 font-family: $common-verdana;
                 .notes {
                   margin-bottom: 5px;
+                }
+              }
+              .subject {
+                float: right;
+                img {
+                  width: 40px;
                 }
               }
             }

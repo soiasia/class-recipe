@@ -41,3 +41,8 @@ li.project
         == "#{project.note.note_cards.length} notes"
       .since
         == "since #{(Time.now.to_i - project.created_at.to_i)/86400} days ago"
+
+    .subject
+      - index = project.subject.nil? ? 0 : project.subject
+      - subject = project.subjects[index]
+      == image_tag subject[0], title: subject[1]

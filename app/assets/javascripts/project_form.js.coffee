@@ -59,3 +59,13 @@ $ ->
     target.addClass "selected"
     value = target.attr("id").substring "license-".length
     $("#project_license").val value
+
+  $(document).on "click", ".selectable-icons img", (event) ->
+    target = $ this
+    parent = target.parent()
+    parent.find("img").removeClass "selected"
+    field = parent.data "field"
+    target.addClass "selected"
+    id = target.attr "id"
+    value = id.substring id.indexOf("-") + 1
+    $("#" + field).val value

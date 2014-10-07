@@ -59,6 +59,39 @@
             'Summary
           == f.text_area :description, placeholder: "Add Summary", tabindex: 3, class: "link-textarea", maxlength: "140"
 
+        section.subject.selectable-icons data-field="project_subject"
+          h1
+            'Subject
+          == f.hidden_field :subject
+          - subjectindex = f.object.subject.nil? ? 0 : f.object.subject
+          - @project.subjects.each_with_index do |subject, index|
+            - clazz = index == subjectindex ? "selected" : ""
+            - image = subject[0]
+            - title = subject[1]
+            == image_tag(image, class: "#{clazz}", id: "subject-#{index}", title: "#{title}")
+
+        section.age.selectable-icons data-field="project_age"
+          h1
+            'Age
+          == f.hidden_field :age
+          - ageindex = f.object.age.nil? ? 0 : f.object.age
+          - @project.ages.each_with_index do |age, index|
+            - clazz = index == ageindex ? "selected" : ""
+            - image = age[0]
+            - title = age[1]
+            == image_tag(image, class: "#{clazz}", id: "age-#{index}", title: "#{title}")
+
+        section.scale.selectable-icons data-field="project_scale"
+          h1
+            'scale
+          == f.hidden_field :scale
+          - scaleindex = f.object.scale.nil? ? 0 : f.object.scale
+          - @project.scales.each_with_index do |scale, index|
+            - clazz = index == subjectindex ? "selected" : ""
+            - image = scale[0]
+            - title = scale[1]
+            == image_tag(image, class: "#{clazz}", id: "scale-#{index}", title: "#{title}")
+
         section.license
           h1
             'License

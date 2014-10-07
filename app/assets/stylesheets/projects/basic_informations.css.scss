@@ -50,7 +50,13 @@
         background: asset-url("starred.png") no-repeat;
         background-size: contain;
       }
-
+    }
+    .icon {
+      display: inline;
+      img {
+        vertical-align: middle;
+        width: 40px;
+      }
     }
   }
 

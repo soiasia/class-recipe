@@ -17,6 +17,9 @@ class Project
   slug :name, scope: :owner_id
 
   field :license, type: :integer
+  field :scale, type: :integer
+  field :age, type: :integer
+  field :subject, type: :integer
 
   has_many :derivatives, class_name: Project.name, inverse_of: :original
   belongs_to :original, class_name: Project.name, inverse_of: :derivatives
@@ -101,9 +104,48 @@ class Project
     ["by", "by-sa", "by-nc", "by-nc-sa"]
   end
 
+  def subjects
+    [
+      ["ttbicon/sub_art.png", "Art"],
+      ["ttbicon/sub_it.png", "Information Technologoy"],
+      ["ttbicon/sub_koku.png", "Reading & Writing"],
+      ["ttbicon/sub_lang.png", "Language"],
+      ["ttbicon/sub_math.png", "Mathematics"],
+      ["ttbicon/sub_mu.png", "Music"],
+      ["ttbicon/sub_PE.png", "Physical Education"],
+      ["ttbicon/sub_sci.png", "Science"],
+      ["ttbicon/sub_soci.png", "Social"],
+      ["ttbicon/sub_tech.png", "Technologoy"],
+      ["ttbicon/sub_other.png", "Other"]
+    ]
+  end
+
+  def scales
+    [
+      ["ttbicon/Scale/scale1-5.png", "for 1 - 5 peoples"],
+      ["ttbicon/Scale/scale5-10.png", "for 5 - 10 peoples"],
+      ["ttbicon/Scale/scale10-30.png", "for 10 - 30 peoples"],
+      ["ttbicon/Scale/scale30.png", "over 30 peoples"]
+    ]
+  end
+
+  def ages
+    [
+      ["ttbicon/Age/age_003.png", "for Ages 3 and up"],
+      ["ttbicon/Age/age_007.png", "for Ages 7 and up"],
+      ["ttbicon/Age/age_009.png", "for Ages 9 and up"],
+      ["ttbicon/Age/age_013.png", "for Ages 13 and up"],
+      ["ttbicon/Age/age_016.png", "for Ages 16 and up"],
+      ["ttbicon/Age/age_018.png", "for Ages 18 and up"],
+      ["ttbicon/Age/age_021.png", "for Ages 21 and up"],
+      ["ttbicon/Age/age_060.png", "for Ages 60 and up"],
+      ["ttbicon/Age/age_999.png", "for Everyone"]
+    ]
+  end
+
   class << self
     def updatable_columns
-      [:name, :title, :description, :owner_id, :owner_type, :is_private, :license,
+      [:name, :title, :description, :owner_id, :owner_type, :is_private, :license, :subject, :scale, :age,
        usages_attributes: Card::Usage.updatable_columns,
        figures_attributes: Figure.updatable_columns,
        likes_attributes: Like.updatable_columns,

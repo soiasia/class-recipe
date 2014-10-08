@@ -6,6 +6,8 @@ article class="card state" data-position="#{card.try(:position)}" id="#{card.id}
     .card-content
       == render "components/card_figures", card: card
       == render "components/card_title", card: card
+      - if card.required_time > 0
+        div.required-time #{card.required_time}
       == render "components/card_contributors", card: card
       == render "components/card_description", card: card
       == render "components/card_attachments", card: card

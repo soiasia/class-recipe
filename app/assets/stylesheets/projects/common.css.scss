@@ -30,6 +30,19 @@ article.card .title {
   .description {
     line-height: 1.65;
   }
+  .required-time {
+    $box-size: 36px;
+    margin-left: 50px;
+    float: left;
+    border: 1px solid;
+    width: $box-size;
+    height: $box-size;
+    border-radius: $box-size/2;
+    line-height: $box-size * 1.1;
+    margin-top: -9px;
+    text-align: center;
+    font-size: 14px;
+  }
   .contributors {
     float: right;
     .contributor {

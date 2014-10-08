@@ -41,13 +41,13 @@ form.project-form {
     @include cf;
     margin: 10px auto;
     width: $project_form_width;
-    .description {
+    .description, .goal, .requirement {
       h1 {
         margin-bottom: 0;
         margin-top: 10px;
         font-size: 22px;
       }
-      #project_description {
+      #project_description, #project_goal, #project_requirement, {
         font-family: $common-verdana;
         width: 100%;
         height: 140px;

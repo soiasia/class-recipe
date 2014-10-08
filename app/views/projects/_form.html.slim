@@ -18,6 +18,7 @@
 
   #basic-information
     == f.text_field :title, placeholder: "Input Project Title", tabindex: 1, maxlength: "30"
+
     #project-summary
       - if page == "edit"
 
@@ -58,6 +59,17 @@
           h1
             'Summary
           == f.text_area :description, placeholder: "Add Summary", tabindex: 3, class: "link-textarea", maxlength: "140"
+
+        section.goal
+          h1
+            'Goal
+          == f.text_area :goal, placeholder: "Describe the Goal"
+
+        section.requirement
+          h1
+            'Requirement
+          == f.text_area :requirement, placeholder: "Describe the Requirements for the Project"
+
 
         section.subject.selectable-icons data-field="project_subject"
           h1

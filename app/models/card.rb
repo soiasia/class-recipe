@@ -13,8 +13,6 @@ class Card
 
   field :title
   field :description
-  field :goal
-  field :requirement
 
   validates :_type, presence: true
 
@@ -35,7 +33,7 @@ class Card
 
   class << self
     def updatable_columns
-      [:id, :title, :goal, :requirement, :description, :_type,
+      [:id, :title, :description, :_type,
        figures_attributes: Figure.updatable_columns,
        attachments_attributes: Attachment.updatable_columns,
        likes_attributes: Like.updatable_columns

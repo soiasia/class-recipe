@@ -11,6 +11,8 @@ class Project
 
   searchable_field :name
   searchable_field :title
+  searchable_field :goal
+  searchable_field :requirement
   searchable_field :description
   searchable_field :is_private, type: :boolean
   searchable_field :owner_id
@@ -46,6 +48,8 @@ class Project
   searchable do
     text :name
     text :title
+    text :goal
+    text :requirement
     text :description
     string :owner_type
     string :owner_id
@@ -145,7 +149,7 @@ class Project
 
   class << self
     def updatable_columns
-      [:name, :title, :description, :owner_id, :owner_type, :is_private, :license, :subject, :scale, :age,
+      [:name, :title, :goal, :requirement, :description, :owner_id, :owner_type, :is_private, :license, :subject, :scale, :age,
        usages_attributes: Card::Usage.updatable_columns,
        figures_attributes: Figure.updatable_columns,
        likes_attributes: Like.updatable_columns,

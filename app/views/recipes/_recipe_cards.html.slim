@@ -9,6 +9,18 @@
 section#recipe-cards
   #top
     .inner
+      - if @project.goal.present?
+        section#goal
+          h2 Goal
+          .description
+            == simple_format @project.goal
+
+      - if @project.requirement.present?
+        section#requirement
+          h2 Requirement
+          .description
+            == simple_format @project.requirement
+
       section#material-list
         h2 Materials
         ul
@@ -25,7 +37,7 @@ section#recipe-cards
     #top
       .inner
         h2 Making
-    ul#recipe-card-list.card-list 
+    ul#recipe-card-list.card-list
       - if can? :edit, @project
         #card-order-tools
           == link_to "Change Order", "#", class: "order-change-btn btn"

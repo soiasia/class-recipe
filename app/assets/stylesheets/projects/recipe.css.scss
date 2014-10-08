@@ -194,15 +194,6 @@
             font-size: 14px;
             line-height: $common-line-height;
           }
-          .options {
-            float: left;
-            margin-bottom: 18px;
-            width: $card_content_width - $figure_width - $figure_margin_right;
-            font-family: $common-sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: $common-line-height;
-          }
           .description {
             float: left;
             word-wrap: break-word;
@@ -305,15 +296,6 @@
                 font-size: 14px;
                 line-height: $common-line-height;
               }
-              .options {
-                float: left;
-                margin-bottom: 18px;
-                width: $annotation_width - $figure_width - $figure_margin_right;
-                font-family: $common-sans-serif;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: $common-line-height;
-              }
               .description {
                 float: left;
                 word-wrap: break-word;
@@ -409,6 +391,27 @@
 
 .edit_recipe {
   display: none;
+}
+
+#goal, #requirement {
+  border-top: $common-border;
+  padding: 3px 0 70px;
+  h2 {
+    display: inline-block;
+    vertical-align: top;
+    width: 240px;
+    font-family: $common-helvetica;
+    font-size: 22px;
+    line-height: $common-line-height;
+  }
+  .description {
+    display: inline-block;
+    padding-top: 7px;
+    width: 610px;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: $common-line-height;
+  }
 }
 
 #material-list, #tool-list, #blueprint-list {

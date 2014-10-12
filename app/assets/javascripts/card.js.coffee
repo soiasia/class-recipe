@@ -14,9 +14,7 @@ validateForm = (event, is_note_card_form) ->
     for instance in editor.nicInstances
       html_text =  instance.getContent()
       plain_text = html_text.replace /<("[^"]*"|'[^']*'|[^'">])*>/g,''
-      if plain_text.length > 400
-        alert "Description text should be less than 400."
-        event.preventDefault()
+     
 
   validated = false
   $(".card-form:first-child .validate").each (index, element) ->

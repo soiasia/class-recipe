@@ -11,12 +11,9 @@ $ ->
     animationSpeed: 300,
     controlNav: true,
     smoothHeight: true,
-    slideshow: false,
-    start: ->
-      $("ul#featured-projects").packery
-        itemSelector: ".project",
-        gutter: 20
-      $("ul#reciped-projects").packery
-        itemSelector: ".project",
-        gutter: 20
-      return
+    slideshow: false
+
+$(window).on "load" , ->
+  $(".projects").packery
+    itemSelector: ".project",
+    gutter: 20

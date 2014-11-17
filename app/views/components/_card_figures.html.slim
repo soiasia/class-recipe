@@ -4,7 +4,7 @@
       ul.slides
         - card.figures.each do |figure|
           li
-            == image_tag figure.content
+            == image_tag figure.content.small, data: {src: figure.content.url}
 
   - elsif card.figures.first.link.present?
     figure

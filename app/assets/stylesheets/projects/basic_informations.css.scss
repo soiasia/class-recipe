@@ -82,6 +82,7 @@
       }
       ol.flex-control-paging {
         top: 10px;
+        height: 10px;
         li>a {
           background: $common-basic-color;
           opacity: 0.5;
@@ -97,9 +98,6 @@
       }
       .flex-direction-nav a:before {
         color: $common-basic-color;
-      }
-      .flex-prev, .flex-next {
-        font-size: 0;
       }
       ol.flex-control-paging {
         li>a {
@@ -122,6 +120,12 @@
         top: 20px;
         height: 100%;
         font-size: 0;
+      }
+      .flex-prev:before {
+        content: '<';
+      }
+      .flex-next:before {
+        content: '>';
       }
     }
     figure.visual>img {

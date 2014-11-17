@@ -147,6 +147,17 @@ class Project
     ]
   end
 
+  def thumbnail
+    if figures.first.link.present?
+      "http://img.youtube.com/vi/" + figures.first.link.split("/").last + "/mqdefault.jpg"
+    elsif figures.first.content.present?
+      figures.first.content.small
+    else
+      "fallback/blank.png"
+    end
+  end
+
+
   class << self
     def updatable_columns
       [:name, :title, :goal, :requirement, :description, :owner_id, :owner_type, :is_private, :license, :subject, :scale, :age,

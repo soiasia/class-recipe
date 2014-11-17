@@ -1,15 +1,9 @@
 li.project
   .inner
     - if project.figures.present?
-      - if project.figures.first.content.present?
-        figure.visual.flexslider
-          ul.slides
-            - project.figures.each do |figure|
-              li
-                == image_tag figure.content
-      - elsif project.figures.first.link.present?
+      - if project.figures.first.content.present? or project.figures.first.link.present?
         figure.visual
-          iframe src="#{project.figures.first.link}"
+          == link_to image_tag(project.thumbnail), project_path(project.owner, project)
       - else
         .spacer
     - else
